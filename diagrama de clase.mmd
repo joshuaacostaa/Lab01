@@ -17,6 +17,35 @@ classDiagram
         +retirar(): void
     }
  
-    Estudiante "1" --> "*" Curso : matrícula
- 
- 
+class PeriodoCurso {
+    -id : int
+    -idCurso :string
+    -idPeiodo : int
+    -idProfesor : int
+    -horario : string
+    +asignarProfesor() : void
+    +modificarHorario() : void
+
+}
+
+    class Profesor {
+        -id: int
+        -nombre: string
+        -departamento: string
+        +asignarCurso(): void
+        +editarPerfil(): void
+    }
+
+class Periodo {
+    -ao : int 
+    -nombre : string
+    -activo : booleam
+    +crearPeriodo() : void
+    +cerrarPeriodo() : void
+
+}
+
+    Estudiante "1" --> "*" PeriodoCurso : matriculado en 
+    Curso "1" --> "*" Periodo : ofrecido en 
+ Periodo "1" --> "*" PeriodoCurso : contiene
+ Profesor "1" --> "*" PeriodoCurso : enseña 
