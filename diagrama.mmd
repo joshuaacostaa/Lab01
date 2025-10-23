@@ -1,0 +1,9 @@
+graph TD
+    A[Presionar ENTRO en el formulario] --> B{Evento 'submit' en 'loginForm'};
+    B --> C[Llamar a preventDefault];
+    C --> D[Obtener 'tipo' y 'usuario'];
+    D --> E{¿'tipo' es 'profesor'?};
+    E -- Sí --> F[Redirigir a profesores?usuario=...];
+    E -- No --> G[Redirigir a estudiantes?usuario=...];
+    F --> H[Fin de la Redirección];
+    G --> H;
